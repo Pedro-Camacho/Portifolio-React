@@ -1,6 +1,7 @@
 
-import Instagram from '../Imagens/iconMonstr-instagram-14.svg'
+
 import Linkedin from '../Imagens/iconmonstr-linkedin-3.svg'
+import Instagram from '../Imagens/iconMonstr-instagram-14.svg'
 import GitHub from '../Imagens/github-mark.png'
 export default  function Footer(){
     return(
