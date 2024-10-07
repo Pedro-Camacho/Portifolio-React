@@ -1,4 +1,4 @@
-import Organo from "../Imagens/organo.png"
+import Organo from "../Imagens/Organo.png"
 import EdgeComputing from '../Imagens/EdgeComputing.png'
 import Cascudo from '../Imagens/cascudo.png'
 import Mahindra from '../Imagens/mahindra.jpg'
