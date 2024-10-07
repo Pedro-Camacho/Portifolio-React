@@ -20,8 +20,8 @@ export default function Sobre(){
             <div className='flex flex-col lg:flex-row ml-[60px] lg:ml-[400px]  gap-[70px] pt-[30px] pb-[30px]'>
                <Habilidades nome="Html" imagem={Html} nivel="Avançado"/> 
                <Habilidades nome="Css" imagem={Css} nivel="Avançado"/> 
-               <Habilidades nome="Python" imagem={Python} nivel="Basico"/> 
-               <Habilidades nome="React" imagem={ImagemReact} nivel="Basico"/> 
+               <Habilidades nome="Python" imagem={Python} nivel="Básico"/> 
+               <Habilidades nome="React" imagem={ImagemReact} nivel="Básico"/> 
             </div>
         </div>
         
