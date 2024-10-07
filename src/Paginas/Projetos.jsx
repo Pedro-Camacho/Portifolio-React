@@ -1,7 +1,8 @@
-import Organo from "../Imagens/Organo.png"
+
 import EdgeComputing from '../Imagens/EdgeComputing.png'
 import Cascudo from '../Imagens/cascudo.png'
 import Mahindra from '../Imagens/mahindra.jpg'
+import Organo from "../Imagens/Organo.png"
 
 import Projeto from '../Componentes/Projeto'
 
