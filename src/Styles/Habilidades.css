@@ -1,0 +1,28 @@
+.habilidades-card {
+  width: 180px;
+  height: 250px;
+  background-color: #444343;
+  border-radius: 46px;
+  display: grid;
+  justify-items: center;
+  padding-top: 10px;
+}
+
+.habilidades-img {
+  width: 100px;
+}
+
+.habilidades-nome {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 24px;
+  text-align: left;
+  color: white;
+}
+
+.habilidades-nivel {
+  margin-top: -10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 24px;
+  text-align: left;
+  color: white;
+}

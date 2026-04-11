@@ -1,0 +1,50 @@
+.sobre {
+  height: 100vh;
+}
+
+.sobre-texto {
+  margin-top: 40px;
+  width: 1089px;
+  margin-left: 400px;
+}
+
+.sobre-paragrafo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 24px;
+  text-align: left;
+  color: white;
+  text-wrap: wrap;
+}
+
+.sobre-titulo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 36px;
+  text-align: left;
+  color: white;
+  margin-left: 400px;
+}
+
+.sobre-habilidades {
+  display: flex;
+  flex-direction: row;
+  margin-left: 400px;
+  gap: 70px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+@media (max-width: 1023px) {
+  .sobre-texto {
+    width: 100%;
+    margin-left: 60px;
+  }
+
+  .sobre-titulo {
+    margin-left: 60px;
+  }
+
+  .sobre-habilidades {
+    flex-direction: column;
+    margin-left: 60px;
+  }
+}

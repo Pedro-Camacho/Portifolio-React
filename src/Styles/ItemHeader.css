@@ -1,0 +1,15 @@
+.item-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1.5rem;
+}
+
+.item-header-icon {
+  width: 3rem;
+}
+
+.item-header-text {
+  font-family: 'JetBrains Mono', monospace;
+  color: white;
+}

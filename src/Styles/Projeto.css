@@ -1,0 +1,17 @@
+.projeto-card {
+  width: 500px;
+  background-color: #444343;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 24px;
+  text-align: left;
+  color: white;
+  margin-bottom: 3rem;
+}
+
+.projeto-card img {
+  width: 100%;
+}
+
+.projeto-card a {
+  color: white;
+}
