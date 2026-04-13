@@ -1,0 +1,76 @@
+.hab-section {
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  border-top: 1px solid #2a2a2a;
+  overflow: hidden;
+}
+
+.hab-titulo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 36px;
+  color: white;
+}
+
+/* ── Infinite scroll carousel ── */
+
+.hab-carrossel-wrapper {
+  width: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+}
+
+@keyframes scroll-skills {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.hab-carrossel-track {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: scroll-skills 14s linear infinite;
+  padding: 1rem 0;
+}
+
+.hab-carrossel-wrapper:hover .hab-carrossel-track {
+  animation-play-state: paused;
+}
+
+/* ── Individual skill card ── */
+
+.hab-skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 130px;
+  height: 140px;
+  background-color: #1c1c1c;
+  border: 1px solid #2e2e2e;
+  border-radius: 14px;
+  flex-shrink: 0;
+  transition: border-color 0.25s, transform 0.25s;
+  cursor: default;
+}
+
+.hab-skill-item:hover {
+  border-color: #DE9494;
+  transform: translateY(-5px);
+}
+
+.hab-skill-item img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.hab-skill-item span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: #ccc;
+}

@@ -1,22 +1,43 @@
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  height: 7rem;
+  height: 5rem;
+  padding: 0 2rem;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #2a2a2a;
 }
 
-.header-logo {
-  width: 4rem;
-}
-
-.header-link {
-  padding-top: 1.5rem;
+.header-logo-link {
+  display: flex;
+  align-items: center;
   text-decoration: none;
 }
 
-@media (max-width: 1023px) {
+.header-logo {
+  width: 2.5rem;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-link {
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .header-logo {
+    display: none;
+  }
+
   .header {
-    display: grid;
-    height: auto;
+    justify-content: center;
   }
 }

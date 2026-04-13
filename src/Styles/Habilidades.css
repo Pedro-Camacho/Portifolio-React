@@ -1,28 +1,37 @@
 .habilidades-card {
-  width: 180px;
-  height: 250px;
-  background-color: #444343;
-  border-radius: 46px;
-  display: grid;
-  justify-items: center;
-  padding-top: 10px;
+  width: 140px;
+  height: 180px;
+  background-color: #1c1c1c;
+  border: 1px solid #2e2e2e;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.habilidades-card:hover {
+  border-color: #DE9494;
+  transform: translateY(-4px);
 }
 
 .habilidades-img {
-  width: 100px;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
 }
 
 .habilidades-nome {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 24px;
-  text-align: left;
+  font-size: 14px;
   color: white;
 }
 
 .habilidades-nivel {
-  margin-top: -10px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 24px;
-  text-align: left;
-  color: white;
+  font-size: 12px;
+  color: #DE9494;
 }

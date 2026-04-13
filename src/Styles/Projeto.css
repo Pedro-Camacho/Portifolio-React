@@ -1,17 +1,49 @@
 .projeto-card {
-  width: 500px;
-  background-color: #444343;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 24px;
-  text-align: left;
-  color: white;
-  margin-bottom: 3rem;
-}
-
-.projeto-card img {
+  background-color: #1c1c1c;
+  border: 1px solid #2e2e2e;
+  border-radius: 12px;
+  overflow: hidden;
   width: 100%;
 }
 
-.projeto-card a {
+.projeto-card-img-wrapper {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+}
+
+.projeto-card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.projeto-card-info {
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.projeto-card-info h2 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 16px;
   color: white;
+}
+
+.projeto-card-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.projeto-card-links a {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: #DE9494;
+  text-decoration: none;
+}
+
+.projeto-card-links a:hover {
+  text-decoration: underline;
 }

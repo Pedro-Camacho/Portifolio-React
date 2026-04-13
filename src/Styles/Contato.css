@@ -1,55 +1,87 @@
 .contato {
-  height: 100vh;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6rem 2rem;
+  border-top: 1px solid #2a2a2a;
+}
+
+.contato-section-titulo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 36px;
+  color: white;
+  margin-bottom: 2.5rem;
 }
 
 .contato-form {
-  margin-left: 300px;
-  margin-top: 200px;
-  width: 1200px;
-  height: 500px;
-  background-color: #444343;
+  width: 100%;
+  max-width: 560px;
+  background-color: #1c1c1c;
+  border: 1px solid #2e2e2e;
+  border-radius: 16px;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  border-radius: 46px;
-  border-right: 4px solid #3A3A3A;
-  border-bottom: 4px solid #3A3A3A;
+  gap: 1.25rem;
 }
 
 .contato-titulo {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 30px;
-  text-align: left;
+  font-size: 18px;
   color: white;
-  padding-left: 100px;
+  margin-bottom: 0.25rem;
+}
+
+.contato-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
 .contato-label {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 24px;
-  text-align: left;
-  color: white;
-  padding-left: 100px;
-  margin-top: 20px;
+  font-size: 11px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .contato-input {
-  width: 700px;
-  margin-left: 100px;
+  width: 100%;
+  background-color: #111;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 0.65rem 0.875rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  color: white;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.contato-input:focus {
+  border-color: #DE9494;
+}
+
+.contato-textarea {
+  resize: vertical;
+  min-height: 110px;
 }
 
 .contato-btn {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 24px;
-  text-align: left;
-  color: white;
-  margin-left: 100px;
-  background: none;
+  font-size: 14px;
+  color: #111;
+  background-color: #DE9494;
   border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.5rem;
   cursor: pointer;
+  align-self: flex-start;
+  transition: background-color 0.2s;
 }
 
-@media (max-width: 1023px) {
-  .contato-form {
-    width: 700px;
-  }
+.contato-btn:hover {
+  background-color: #c87a7a;
 }
