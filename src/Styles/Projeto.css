@@ -1,15 +1,32 @@
 .projeto-card {
-  background-color: #1c1c1c;
-  border: 1px solid #2e2e2e;
-  border-radius: 12px;
+  background: linear-gradient(160deg, var(--color-surface), var(--color-bg-soft));
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
   overflow: hidden;
   width: 100%;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.projeto-card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(184, 29, 35, 0.2);
 }
 
 .projeto-card-img-wrapper {
   width: 100%;
-  height: 280px;
+  height: 50vh;
   overflow: hidden;
+  position: relative;
+}
+
+.projeto-card-img-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(10, 6, 6, 0.9) 100%);
+  pointer-events: none;
 }
 
 .projeto-card-img-wrapper img {
@@ -17,19 +34,27 @@
   height: 100%;
   object-fit: cover;
   object-position: top;
+  transition: transform 0.6s ease;
+}
+
+.projeto-card:hover .projeto-card-img-wrapper img {
+  transform: scale(1.06);
 }
 
 .projeto-card-info {
-  padding: 1.1rem 1.25rem;
+  padding: 1.25rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
+  border-top: 1px solid var(--color-border);
 }
 
 .projeto-card-info h2 {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 16px;
-  color: white;
+  font-weight: 600;
+  color: var(--color-text-strong);
 }
 
 .projeto-card-links {
@@ -38,12 +63,18 @@
 }
 
 .projeto-card-links a {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 13px;
-  color: #DE9494;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-accent);
   text-decoration: none;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 999px;
+  transition: all 0.25s;
 }
 
 .projeto-card-links a:hover {
-  text-decoration: underline;
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #000;
 }

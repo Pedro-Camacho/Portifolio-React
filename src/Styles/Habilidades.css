@@ -1,37 +1,41 @@
 .habilidades-card {
-  width: 140px;
-  height: 180px;
-  background-color: #1c1c1c;
-  border: 1px solid #2e2e2e;
-  border-radius: 16px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   gap: 0.6rem;
-  padding: 1rem;
-  transition: border-color 0.2s, transform 0.2s;
+  width: 140px;
+  padding: 1.25rem 1rem;
+  background: linear-gradient(160deg, var(--color-surface), var(--color-bg-soft));
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
 }
 
 .habilidades-card:hover {
-  border-color: #DE9494;
+  border-color: var(--color-accent);
   transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(184, 29, 35, 0.2);
 }
 
 .habilidades-img {
-  width: 60px;
-  height: 60px;
+  width: 52px;
+  height: 52px;
   object-fit: contain;
 }
 
 .habilidades-nome {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 14px;
-  color: white;
+  font-weight: 600;
+  color: var(--color-text-strong);
 }
 
 .habilidades-nivel {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  color: #DE9494;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--color-accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }

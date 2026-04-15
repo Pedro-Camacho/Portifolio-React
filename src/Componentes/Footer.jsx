@@ -6,7 +6,7 @@ import '../Styles/Footer.css'
 export default function Footer() {
     return (
         <footer className="footer">
-            <p className="footer-copy">© 2024 Pedro Camacho</p>
+            <p className="footer-copy">© {new Date().getFullYear()} Pedro Camacho</p>
             <div className="footer-links">
                 <a href='https://www.instagram.com/pedro.acamacho/' className="footer-link" target="_blank" rel="noreferrer">
                     <img className='footer-icon' src={Instagram} alt="Instagram" />

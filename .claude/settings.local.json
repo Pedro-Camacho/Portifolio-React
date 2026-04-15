@@ -3,7 +3,13 @@
     "allow": [
       "Bash(npm run:*)",
       "Bash(awk '{print $9, \"\\(\" $5 \"\\)\"}')",
-      "Bash(npx playwright:*)"
+      "Bash(npx playwright:*)",
+      "mcp__claude_ai_Figma__get_design_context",
+      "Bash(curl -sL -o java.svg \"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg\")",
+      "Bash(curl -sL -o csharp.svg \"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg\")",
+      "Bash(curl -sL -o typescript.svg \"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg\")",
+      "Bash(curl -sL -o azure.svg \"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg\")",
+      "Bash(curl -sL -o python-new.svg \"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg\")"
     ]
   }
 }

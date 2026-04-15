@@ -1,104 +1,111 @@
 .projetos {
-  min-height: 80vh;
+  min-height: 100vh;
   padding: 6rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-top: 1px solid #2a2a2a;
+  position: relative;
 }
 
 .projetos-titulo {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 36px;
-  color: white;
+  font-family: var(--font-mono);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--color-text-strong);
   margin-bottom: 3rem;
+  letter-spacing: -0.02em;
+  position: relative;
 }
 
-/* ── Carousel ── */
+.projetos-titulo::before {
+  content: '02.';
+  color: var(--color-accent);
+  margin-right: 0.75rem;
+  font-weight: 400;
+}
 
 .carrossel {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.5rem;
   width: 100%;
-  max-width: 560px;
+  max-width: 960px;
 }
 
 .carrossel-viewport {
   flex: 1;
   overflow: hidden;
-  border-radius: 12px;
+  
+  border-radius: var(--radius-md);
 }
 
 .carrossel-track {
   display: flex;
-  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .carrossel-item {
+  
   flex: 0 0 100%;
 }
 
 .carrossel-btn {
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   flex-shrink: 0;
   border-radius: 50%;
-  background: #1c1c1c;
-  border: 1px solid #333;
-  color: #ccc;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  color: var(--color-cream);
   font-size: 18px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  transition: all 0.25s;
   user-select: none;
 }
 
 .carrossel-btn:hover {
-  background: #2a2a2a;
-  border-color: #DE9494;
-  color: #DE9494;
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #000;
+  box-shadow: 0 0 22px rgba(184, 29, 35, 0.6);
 }
 
 .carrossel-dots {
   display: flex;
   gap: 0.5rem;
-  margin-top: 1.5rem;
+  margin-top: 1.75rem;
 }
 
 .carrossel-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #333;
+  background: var(--color-border-strong);
   border: none;
   padding: 0;
   cursor: pointer;
-  transition: background-color 0.2s, transform 0.2s;
+  transition: background-color 0.25s, transform 0.25s, width 0.25s;
 }
 
 .carrossel-dot-active {
-  background: #DE9494;
-  transform: scale(1.4);
+  background: var(--color-accent);
+  width: 24px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(184, 29, 35, 0.6);
 }
 
 .carrossel-counter {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 12px;
-  color: #555;
-  margin-top: 0.75rem;
+  color: var(--color-text-muted);
+  margin-top: 0.85rem;
+  letter-spacing: 0.1em;
 }
 
 @media (max-width: 640px) {
-  .carrossel {
-    gap: 0.75rem;
-  }
-
-  .carrossel-btn {
-    width: 36px;
-    height: 36px;
-    font-size: 15px;
-  }
+  .carrossel { gap: 0.75rem; }
+  .carrossel-btn { width: 40px; height: 40px; font-size: 15px; }
 }

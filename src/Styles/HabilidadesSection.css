@@ -1,24 +1,44 @@
 .hab-section {
-  padding: 5rem 0;
+  padding: 6rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 3rem;
-  border-top: 1px solid #2a2a2a;
   overflow: hidden;
+  position: center;
+}
+
+.hab-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  opacity: 0.5;
 }
 
 .hab-titulo {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 36px;
-  color: white;
+  font-family: var(--font-mono);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--color-text-strong);
+  letter-spacing: -0.02em;
 }
 
-/* ── Infinite scroll carousel ── */
+.hab-titulo::after {
+  content: ' ()';
+  color: var(--color-accent);
+  font-weight: 400;
+
+}
 
 .hab-carrossel-wrapper {
   width: 100%;
   overflow: hidden;
+  position: static;
   -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
   mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
 }
@@ -32,15 +52,13 @@
   display: flex;
   gap: 2rem;
   width: max-content;
-  animation: scroll-skills 14s linear infinite;
-  padding: 1rem 0;
+  animation: scroll-skills 4s linear infinite;
+  padding: 2rem;
 }
 
 .hab-carrossel-wrapper:hover .hab-carrossel-track {
   animation-play-state: paused;
 }
-
-/* ── Individual skill card ── */
 
 .hab-skill-item {
   display: flex;
@@ -48,19 +66,20 @@
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  width: 130px;
-  height: 140px;
-  background-color: #1c1c1c;
-  border: 1px solid #2e2e2e;
-  border-radius: 14px;
+  width: 140px;
+  height: 150px;
+  background: linear-gradient(160deg, var(--color-surface), var(--color-bg-soft));
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
   flex-shrink: 0;
-  transition: border-color 0.25s, transform 0.25s;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
   cursor: default;
 }
 
 .hab-skill-item:hover {
-  border-color: #DE9494;
+  border-color: var(--color-accent);
   transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(184, 29, 35, 0.25);
 }
 
 .hab-skill-item img {
@@ -70,7 +89,8 @@
 }
 
 .hab-skill-item span {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 13px;
-  color: #ccc;
+  color: var(--color-cream);
+  font-weight: 500;
 }
