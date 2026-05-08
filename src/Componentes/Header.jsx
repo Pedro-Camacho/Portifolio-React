@@ -1,23 +1,47 @@
-import BolaBasquete from '../Imagens/bolabasquete.svg'
-import Biblioteca from '../Imagens/biblioteca.svg'
-import HabilidadesIcon from '../Imagens/interroga.svg'
-import Home from '../Imagens/home.svg'
-import Email from '../Imagens/email.svg'
-
-import ItemHeader from './ItemHeader'
+import { useEffect, useState } from 'react'
 import '../Styles/Header.css'
 
+const NAV = [
+    { id: 'home', label: 'Home' },
+    { id: 'habilidades', label: 'Habilidades' },
+    { id: 'projetos', label: 'Projetos' },
+    { id: 'contato', label: 'Contato' },
+]
+
 export default function Header() {
+    const [active, setActive] = useState('home')
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) setActive(entry.target.id)
+                })
+            },
+            { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
+        )
+        NAV.forEach(({ id }) => {
+            const el = document.getElementById(id)
+            if (el) observer.observe(el)
+        })
+        return () => observer.disconnect()
+    }, [])
+
     return (
         <header className='header'>
-            <a href="#home" className='header-logo-link'>
-                <img src={BolaBasquete} alt="Logo" className='header-logo' />
+            <a href="#home" className='header-logo'>
+                PC<span>.</span>
             </a>
             <nav className='header-nav'>
-                <a href="#home" className='header-link'><ItemHeader icone={Home} item={"Home"} /></a>
-                <a href="#habilidades" className='header-link'><ItemHeader icone={HabilidadesIcon} item={"Habilidades"} /></a>
-                <a href="#projetos" className='header-link'><ItemHeader icone={Biblioteca} item={"Projetos"} /></a>
-                <a href="#contato" className='header-link'><ItemHeader icone={Email} item={"Contato"} /></a>
+                {NAV.map(({ id, label }) => (
+                    <a
+                        key={id}
+                        href={`#${id}`}
+                        className={`header-link ${active === id ? 'header-link--active' : ''}`}
+                    >
+                        {label}
+                    </a>
+                ))}
             </nav>
         </header>
     )

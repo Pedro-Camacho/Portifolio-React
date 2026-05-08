@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 import EdgeComputing from '../Imagens/EdgeComputing.png'
 import Cascudo from '../Imagens/cascudo.png'
 import Mahindra from '../Imagens/mahindra.jpg'
@@ -10,55 +8,63 @@ import Projeto from '../Componentes/Projeto'
 import '../Styles/Projetos.css'
 
 const projetos = [
-    { titulo: "FireSentinel", imagem: FireSentinel, link: 'https://fire-sentinel.vercel.app/', github: 'https://github.com/Pedro-Camacho/FireSentinel' },
-    { titulo: "Organo", imagem: Organo, link: 'https://oraganizacao.vercel.app/' },
-    { titulo: "Edge Challenge", imagem: EdgeComputing, link: 'https://github.com/Pedro-Camacho/Challenge-Edge-Computing' },
-    { titulo: "Cascudo", imagem: Cascudo, link: 'https://github.com/Pedro-Camacho/Blue-Code-Cascudo-gs-Edge-Computing' },
-    { titulo: "E-teen Python", imagem: Mahindra, link: 'https://github.com/Pedro-Camacho/Challenge-python' },
+    {
+        titulo: 'FireSentinel',
+        imagem: FireSentinel,
+        descricao: 'Sistema de detecção e monitoramento de incêndios em tempo real.',
+        tags: ['React', 'IoT', 'Python'],
+        link: 'https://fire-sentinel.vercel.app/',
+        github: 'https://github.com/Pedro-Camacho/FireSentinel',
+    },
+    {
+        titulo: 'Organo',
+        imagem: Organo,
+        descricao: 'Aplicação para organização de times e colaboradores.',
+        tags: ['React', 'CSS', 'JavaScript'],
+        link: 'https://oraganizacao.vercel.app/',
+    },
+    {
+        titulo: 'Edge Challenge',
+        imagem: EdgeComputing,
+        descricao: 'Solução de Edge Computing para processamento distribuído.',
+        tags: ['IoT', 'Python', 'Edge'],
+        link: 'https://github.com/Pedro-Camacho/Challenge-Edge-Computing',
+    },
+    {
+        titulo: 'Cascudo',
+        imagem: Cascudo,
+        descricao: 'Projeto Blue Code focado em Edge Computing e sensores.',
+        tags: ['Arduino', 'C++', 'IoT'],
+        link: 'https://github.com/Pedro-Camacho/Blue-Code-Cascudo-gs-Edge-Computing',
+    },
+    {
+        titulo: 'E-teen Python',
+        imagem: Mahindra,
+        descricao: 'Challenge desenvolvido em Python para Mahindra Racing.',
+        tags: ['Python', 'Data Analysis'],
+        link: 'https://github.com/Pedro-Camacho/Challenge-python',
+    },
 ]
 
 export default function Projetos() {
-    const [current, setCurrent] = useState(0)
-    const total = projetos.length
-
-    const prev = () => setCurrent((c) => (c - 1 + total) % total)
-    const next = () => setCurrent((c) => (c + 1) % total)
-
     return (
         <div className='projetos'>
+            <p className='secao-label'>Meu trabalho</p>
             <h2 className='projetos-titulo'>Projetos</h2>
 
-            <div className='carrossel'>
-                <button className='carrossel-btn' onClick={prev} aria-label="Anterior">&#8592;</button>
-
-                <div className='carrossel-viewport'>
-                    <div
-                        className='carrossel-track'
-                        style={{ transform: `translateX(-${current * 100}%)` }}
-                    >
-                        {projetos.map((p, i) => (
-                            <div className='carrossel-item' key={i}>
-                                <Projeto titulo={p.titulo} imagem={p.imagem} link={p.link} github={p.github} />
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-                <button className='carrossel-btn' onClick={next} aria-label="Próximo">&#8594;</button>
-            </div>
-
-            <div className='carrossel-dots'>
-                {projetos.map((_, i) => (
-                    <button
+            <div className='projetos-grid'>
+                {projetos.map((p, i) => (
+                    <Projeto
                         key={i}
-                        className={`carrossel-dot ${i === current ? 'carrossel-dot-active' : ''}`}
-                        onClick={() => setCurrent(i)}
-                        aria-label={`Ir para projeto ${i + 1}`}
+                        titulo={p.titulo}
+                        imagem={p.imagem}
+                        descricao={p.descricao}
+                        tags={p.tags}
+                        link={p.link}
+                        github={p.github}
                     />
                 ))}
             </div>
-
-            <p className='carrossel-counter'>{current + 1} / {total}</p>
         </div>
     )
 }

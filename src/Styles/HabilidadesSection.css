@@ -1,96 +1,150 @@
 .hab-section {
-  padding: 6rem 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 7rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3rem;
-  overflow: hidden;
-  position: center;
-}
-
-.hab-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
-  opacity: 0.5;
 }
 
 .hab-titulo {
-  font-family: var(--font-mono);
-  font-size: 40px;
+  font-family: var(--font-display);
+  font-size: 48px;
   font-weight: 700;
   color: var(--color-text-strong);
   letter-spacing: -0.02em;
+  margin-bottom: 4rem;
+  text-align: center;
 }
 
-.hab-titulo::after {
-  content: ' ()';
-  color: var(--color-accent);
-  font-weight: 400;
-
-}
-
-.hab-carrossel-wrapper {
+.hab-categorias {
   width: 100%;
-  overflow: hidden;
-  position: static;
-  -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
-  mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
-}
-
-@keyframes scroll-skills {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.hab-carrossel-track {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
-  width: max-content;
-  animation: scroll-skills 4s linear infinite;
-  padding: 2rem;
 }
 
-.hab-carrossel-wrapper:hover .hab-carrossel-track {
-  animation-play-state: paused;
-}
-
-.hab-skill-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  width: 140px;
-  height: 150px;
-  background: linear-gradient(160deg, var(--color-surface), var(--color-bg-soft));
+.hab-categoria {
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
+  padding: 2rem;
+  transition: border-color 0.3s ease;
+}
+
+.hab-categoria:hover {
+  border-color: var(--color-border-strong);
+}
+
+.hab-categoria-titulo {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-text-strong);
+  margin-bottom: 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.hab-categoria-titulo::before {
+  content: '';
+  width: 4px;
+  height: 20px;
+  background: var(--color-accent);
+  border-radius: 2px;
+}
+
+.hab-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.hab-skill {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hab-skill-icone {
+  width: 36px;
+  height: 36px;
   flex-shrink: 0;
-  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
-  cursor: default;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface-alt);
+  border-radius: 8px;
 }
 
-.hab-skill-item:hover {
-  border-color: var(--color-accent);
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(184, 29, 35, 0.25);
-}
-
-.hab-skill-item img {
-  width: 56px;
-  height: 56px;
+.hab-skill-icone img {
+  width: 24px;
+  height: 24px;
   object-fit: contain;
 }
 
-.hab-skill-item span {
+.hab-skill-fallback {
   font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--color-cream);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: 0.05em;
+}
+
+.hab-skill-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.hab-skill-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.hab-skill-nome {
+  font-family: var(--font-body);
+  font-size: 15px;
   font-weight: 500;
+  color: var(--color-text-strong);
+}
+
+.hab-skill-nivel {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-cream-dim);
+}
+
+.hab-skill-track {
+  width: 100%;
+  height: 6px;
+  background: var(--color-surface-alt);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.hab-skill-fill {
+  height: 100%;
+  background: var(--color-accent);
+  border-radius: 999px;
+  width: 0%;
+  transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@media (max-width: 640px) {
+  .hab-section {
+    padding: 4rem 1.25rem;
+  }
+  .hab-titulo {
+    font-size: 34px;
+    margin-bottom: 2.5rem;
+  }
+  .hab-categoria {
+    padding: 1.5rem;
+  }
 }

@@ -1,9 +1,8 @@
 .app {
   min-height: 100vh;
   background:
-    radial-gradient(1200px 600px at 85% -10%, rgba(184, 29, 35, 0.18), transparent 60%),
-    radial-gradient(900px 500px at -10% 30%, rgba(74, 31, 31, 0.55), transparent 60%),
-    radial-gradient(700px 500px at 50% 110%, rgba(184, 29, 35, 0.12), transparent 60%),
+    radial-gradient(900px 500px at 85% -10%, rgba(184, 29, 35, 0.10), transparent 60%),
+    radial-gradient(700px 400px at -10% 30%, rgba(184, 29, 35, 0.06), transparent 60%),
     var(--color-bg);
   background-attachment: fixed;
   position: relative;
@@ -15,9 +14,8 @@
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(209, 192, 166, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(209, 192, 166, 0.035) 1px, transparent 1px);
-  background-size: 48px 48px;
+    radial-gradient(rgba(209, 192, 166, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
   pointer-events: none;
   z-index: 0;
   mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
